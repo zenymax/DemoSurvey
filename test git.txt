@@ -1,2 +1,6 @@
 hello git
+<<<<<<< HEAD
 conflict
+=======
+ops...
+>>>>>>> phase1
