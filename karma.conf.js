@@ -5,6 +5,8 @@
  */
 var applicationConfiguration = require('./config/config');
 
+// po tay
+
 // Karma configuration
 module.exports = function(config) {
 	config.set({
