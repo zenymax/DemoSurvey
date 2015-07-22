@@ -1,0 +1,53 @@
+<section data-ng-controller="SurveysController">
+    <div class="page-header">
+        <h1>New Survey</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <div class="form-group">
+                <label class="control-label" for="name">Survey Name</label>
+                <div class="controls">
+                    <input type="text" data-ng-model="survey.name" class="form-control" placeholder="Survey name" required>
+                </div>
+                <br>
+                <div class="controls">
+                    <input type="text" data-ng-model="survey.description" class="form-control" placeholder="Survey description">
+                </div>
+            </div>
+            <fieldset ng-repeat="question in questions">
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label class="control-label" for="name">Question {{$index + 1}}</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="question.qContent" class="form-control" placeholder="Question content" required>
+                        </div>
+                        <div class="controls">
+                            <textarea type="text" data-ng-model="question.qDescription" class="form-control" placeholder="Question description" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label" for="name">Answer {{$index + 1}}</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="question.aContent" class="form-control" placeholder="Answer content" required>
+                        </div>
+                        <div class="controls">
+                            <textarea type="text" data-ng-model="question.aDescription" class="form-control" placeholder="Answer description" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <input type="button" class="btn btn-default" value="Add question" ng-click="addNewQuestion()">
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-default" value="Remove question" ng-click="removeQuestion()">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary">
+            </div>
+            <div data-ng-show="error" class="text-danger">
+                <strong data-ng-bind="error"></strong>
+            </div>
+        </form>
+    </div>
+</section>

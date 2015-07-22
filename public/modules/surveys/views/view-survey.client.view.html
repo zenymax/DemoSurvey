@@ -1,0 +1,18 @@
+<section data-ng-controller="SurveysController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="survey.name"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user)">
+		<a class="btn btn-primary" href="/#!/surveys/{{survey._id}}/addQuestion">
+			<i class="glyphicon glyphicon-plus"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="survey.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="survey.user.displayName"></span>
+		</em>
+	</small>
+</section>
